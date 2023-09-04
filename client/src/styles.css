@@ -53,16 +53,37 @@ body {
   background-color: #dfdede;
 }
 
+.search-layout-style {
+  display: flex;
+  justify-content: center;
+}
+
+/* TODO: fix this! */
+input[contentEditable="true"]::before {
+  content: attr(placeholder);
+  background-image: url("/src/images/search-icon.svg");
+}
+
+.country-search-style {
+  width: 100%;
+  padding: 4vw;
+  margin: 5vw;
+  border: none;
+  border-radius: 2vw;
+  font-size: 3vw;
+}
+
 img {
-  border-radius: 3vw 3vw 0 0;
+  border-radius: 2vw 2vw 0 0;
   width: 100%;
   height: auto;
 }
 
 .countries-box-style {
   margin: 8vw;
+  margin-top: 4vw;
   background-color: #fff;
-  border-radius: 3vw;
+  border-radius: 2vw;
 }
 .countries-box-dark-style {
   margin: 8vw;

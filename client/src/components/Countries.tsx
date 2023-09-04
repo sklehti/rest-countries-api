@@ -1,18 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { getAllCountries } from "../services/countryService";
 import { CountryEntry } from "../types";
 
-const Countries = () => {
-  const [countries, setCountries] = useState<Array<CountryEntry>>();
-  useEffect(() => {
-    getAllCountries()?.then((data) => {
-      //   console.log(data);
-      data.map((c) => {
-        setCountries(data);
-      });
-    });
-  }, []);
+interface Props {
+  countries: CountryEntry[] | undefined;
+}
 
+const Countries = ({ countries }: Props) => {
   return (
     <div>
       {countries?.map((c) => (

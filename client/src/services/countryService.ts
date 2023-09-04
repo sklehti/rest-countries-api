@@ -19,3 +19,9 @@ export const getAllCountries = () => {
     }
   }
 };
+
+export const findCountry = (name: string) => {
+  console.log(name);
+
+  return axios.get<CountryEntry>(`${baseUrl}/api/countries/${name}`);
+};
