@@ -11,7 +11,20 @@ const findByName = (name: string): CountryEntry | undefined => {
   return country;
 };
 
+const getAllRegion = (): string[] => {
+  const regions = countryData.map(({ region }) => region);
+
+  const filtered = regions.filter(
+    (region, index) => regions.indexOf(region) === index
+  );
+
+  const sortedRegions = filtered.sort();
+
+  return sortedRegions;
+};
+
 export default {
   getEntries,
+  getAllRegion,
   findByName,
 };

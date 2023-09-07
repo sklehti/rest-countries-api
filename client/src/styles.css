@@ -5,7 +5,7 @@ body {
 }
 
 .header-style {
-  padding: 0 3vw;
+  padding: 3vw 5vw;
   margin: 0px;
 }
 
@@ -54,14 +54,25 @@ body {
 }
 
 .search-layout-style {
+  position: relative;
+  padding: 0;
+  margin: 0;
   display: flex;
   justify-content: center;
 }
 
-/* TODO: fix this! */
-input[contentEditable="true"]::before {
+input[contentEditable="true"] {
   content: attr(placeholder);
+  padding-left: 18vw;
+}
+
+.search-img {
+  position: absolute;
   background-image: url("/src/images/search-icon.svg");
+  width: 4vw;
+  height: 4vw;
+  bottom: 8.2vw;
+  left: 13vw;
 }
 
 .country-search-style {
@@ -72,6 +83,48 @@ input[contentEditable="true"]::before {
   border-radius: 2vw;
   font-size: 3vw;
 }
+
+.country-filter-style:focus,
+.country-search-style:focus {
+  outline: none;
+}
+
+.country-filter-btn {
+  background-color: #fff;
+  cursor: pointer;
+  padding: 5vw 20vw 5vw 5vw;
+  margin: 5vw;
+  border: none;
+  border-radius: 2vw;
+  font-size: 3vw;
+}
+
+.country-filter-layout-style {
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+
+.filter-up-img {
+  position: absolute;
+  background-image: url("/src/images/expand-icon.svg");
+  width: 4vw;
+  height: 4vw;
+  bottom: 9vw;
+  left: 42svw;
+  cursor: pointer;
+  transition: transform 0.5s;
+}
+
+/* .filter-down-img {
+  position: absolute;
+  background-image: url("/src/images/expand-less-icon.svg");
+  width: 4vw;
+  height: 4vw;
+  bottom: 9vw;
+  left: 42svw;
+  cursor: pointer;
+} */
 
 img {
   border-radius: 2vw 2vw 0 0;

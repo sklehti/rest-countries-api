@@ -7,6 +7,10 @@ router.get("/", (_req, res) => {
   res.send(countryService.getEntries());
 });
 
+router.get("/regions", (_req, res) => {
+  res.send(countryService.getAllRegion());
+});
+
 router.get("/:name", (req, res) => {
   try {
     const country = countryService.findByName(req.params.name);

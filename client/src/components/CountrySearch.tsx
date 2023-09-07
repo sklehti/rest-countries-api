@@ -1,6 +1,5 @@
 import React from "react";
 import { CountryEntry } from "../types";
-import SearchIcon from "../images/search-icon.svg";
 
 interface Props {
   setCountries: React.Dispatch<
@@ -22,12 +21,12 @@ const CountrySearch = ({ setCountries, allCountries }: Props) => {
   return (
     <div className="search-layout-style">
       <input
-        //   TODO: fix this!
         contentEditable="true"
         placeholder="Search for a country..."
         className="country-search-style"
         onChange={handleCountry}
       />
+      <div className="search-img"></div>
     </div>
   );
 };
