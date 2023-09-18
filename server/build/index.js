@@ -37,7 +37,14 @@ app.use(express_1.default.json());
 app.use(express_1.default.static("build"));
 app.use("/api/countries", countries_1.default);
 const PORT = process.env.PORT || 3001;
+app.set("trust proxy", function (ip) {
+    if (ip === "127.0.0.1")
+        return false;
+    else
+        return true;
+});
 app.get("/*", (req, res) => {
+    console.log(req.secure, "mitä", req.protocol);
     res.redirect(url.format({
         protocol: req.protocol,
         host: req.get("host"),

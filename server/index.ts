@@ -13,6 +13,11 @@ app.use("/api/countries", countryRouter);
 
 const PORT = process.env.PORT || 3001;
 
+app.set("trust proxy", function (ip: string) {
+  if (ip === "127.0.0.1") return false;
+  else return true;
+});
+
 app.get("/*", (req, res) => {
   res.redirect(
     url.format({
