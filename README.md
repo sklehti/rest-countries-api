@@ -25,4 +25,5 @@ https://countries-app-d79ad3c1d29a.herokuapp.com/
 - cd ../server
 - npm install
 - npm run tsc
+- npm start
 - Open the app on http://localhost:3001/
